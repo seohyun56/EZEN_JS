@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>event8 - target</title>
+    <style>
+        body * {
+            margin: 20px;
+            border: 3px solid #000;
+            padding: 10px;
+        }
+        a {
+            display: block;
+        }
+        em {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <em>box1</em>
+    <div class="box1">
+        <h1>txt1</h1>
+        <h2>txt2</h2>
+    </div>
+
+    <em>box2</em>
+    <div class="box2">
+        <ul>
+            <li><a href="https://naver.com" target="_blank">네이버 바로가기</a></li>
+        </ul>
+    </div>
+<!-- body 뒤에 썼기 때문에 defer 안 써도 됨 -->
+<script src="./event8.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+    <script>
+        // else-if조건문.html
+
+        /*
+            if(조건1) {
+                실행문
+            } else if(조건2) {
+                실행문
+            } else if (조건3) {
+                실행문
+            } else { 위의 조건이 모두 거짓일 때
+                실행문
+            }
+
+            else if()는 제한없이 작성 가능
+        */ 
+
+        let walk = prompt('하루 걸음 수를 입력하세요.');
+
+        if(walk >= 5000) {
+            alert(`입력한 숫자는 ${walk}으로 5000 이상입니다.`);
+        } else if (walk < 5000) {
+            alert(`입력한 숫자는 ${walk}으로 5000 이하입니다.`);
+        } else {
+            alert(`숫자만 입력해주세요.`);
+        }
+    </script>
+</html>

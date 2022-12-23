@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>event Ex1</title>
+    <style>
+        .btn {
+            display: flex;
+        }
+        .btn_style {
+            border: 3px solid #000;
+            margin: 10px;
+            padding: 10px;
+            text-decoration: none;
+            color: inherit;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn">
+        <a href="#" class="btn_style" id="lightpink">lightpink</a>
+        <a href="#" class="btn_style" id="lightgreen">lightgreen</a>
+        <a href="#" class="btn_style" id="lightskyblue">lightskyblue</a>
+        <a href="#" class="btn_style" id="lightblue">lightblue</a>
+    </div>
+<script>
+    const body = document.querySelector('body');
+    const lightpink = document.querySelector('#lightpink');
+    const lightgreen = document.querySelector('#lightgreen');
+    const lightskyblue = document.querySelector('#lightskyblue');
+    const lightblue = document.querySelector('#lightblue');
+
+    lightpink.addEventListener('click', () => {
+        body.style.backgroundColor = 'lightpink';
+    })
+    lightgreen.addEventListener('click', () => {
+        body.style.backgroundColor = 'lightgreen';
+    })
+    lightskyblue.addEventListener('click', () => {
+        body.style.backgroundColor = 'lightskyblue';
+    })
+    lightblue.addEventListener('click', () => {
+        body.style.backgroundColor = 'lightblue';
+    })
+</script>
+</body>
+</html>

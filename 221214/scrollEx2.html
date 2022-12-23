@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>scroll Ex2</title>
+    <style>
+        body {
+            margin: 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #fff;
+            position: relative;
+        }
+        nav {
+            background-color: cornflowerblue;
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+            background-color: lightskyblue;
+            padding: 40px;
+            position: sticky;
+            top: 0;
+        }
+        main {
+            background-color: aliceblue;
+            height: 400vh;
+            color: #000;
+        }
+
+        footer {
+            background-color: royalblue;
+            padding: 50px;
+        }
+        #banner {
+            background-color: mediumblue;
+            width: 300px; height: 80px;
+            position: fixed;
+            right: -340px; bottom: 100px;
+            transition: 0.3s;
+            /* transform: translateX(0); */
+        }
+        #banner.on {
+            right: 0;
+            /* transform: translateX(340px); */
+        }
+    </style>
+</head>
+<body>
+    <nav>네비게이션</nav>
+    <h1>scroll Ex2</h1>
+    <main>원하는 위치에서 실행</main>
+    <footer>푸터</footer>
+
+    <div id="banner">배너입니다</div>
+<script>
+    const footer = document.querySelector('footer');
+    const banner = document.querySelector('#banner');
+
+    // .offsetTop; 부모 요소의 포지션을 기준으로 위에서부터 떨어져있는 거리. 부모에 포지션이 없는 경우 body(문서) 기준
+    let footerOffsetTop = footer.offsetTop;
+    let clientHt = document.documentElement.clientHeight;
+    
+    console.log(footerOffsetTop); 
+    console.log(clientHt); // 현재 보여지는 화면의 길이
+    console.log(footer.clientHeight); // footer의 길이
+
+    let result = footerOffsetTop - clientHt - footer.clientHeight;
+
+    addEventListener('scroll', () => {
+        // console.log(scrollY);
+        if (scrollY >= result) { // 배너 보임
+            banner.classList.add('on');
+        } else if (scrollY < result) { // 배너 숨김
+            banner.classList.remove('on');
+        }
+    })
+</script>
+</body>
+</html>

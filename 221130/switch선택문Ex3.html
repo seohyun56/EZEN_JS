@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>switch 선택문 Ex3</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // 입력받은 커피와 가격 출력
+      // 아메리카노: 15000원, 카페라떼: 20000원, 카메모카: 20000원, 바닐라라떼: 25000원
+
+      // 값을 재할당하지 않으므로 let 대신 const 써도 됨
+      const coffee = prompt(
+        "아메리카노, 카페라떼, 카메모카, 바닐라라떼 중 선택하세요"
+      );
+      let price = 0; // 숫자로 변수 초기화
+
+      switch (coffee) {
+        case null:
+          alert("주문을 취소했습니다.");
+          break;
+        case "아메리카노":
+          price = 15000;
+          // document.body.innerHTML = `<h2>주문하신 ${coffee}의 가격은 ${price}원 입니다.</h2>`;
+          break;
+        case "카페라떼":
+          price = 20000;
+          break;
+        case "카페모카":
+          price = 20000;
+          break;
+        case "바닐라라떼":
+          price = 25000;
+          break;
+
+        default:
+          document.body.innerHTML =
+            "<h2>메뉴에 있는 커피만 주문 가능합니다.</h2>";
+      }
+
+      if (price)
+        document.body.innerHTML = `<h2>주문하신 ${coffee}의 가격은 ${price}원 입니다.</h2>`;
+    </script>
+  </body>
+</html>

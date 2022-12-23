@@ -1,0 +1,23 @@
+<script>
+    /* 
+        1. 생성자 함수로 이름과 특징을 가진 객체를 만들고 출력
+        2. 반려동물, 식물, 나 ... 소개
+        3. 매서드 출력
+    */
+
+   function Introduce (name, age, address) {
+    this.이름 = name;
+    this.나이 = age;
+    this.주소 = address;
+    this.소개 = function() {
+        console.log(`제 이름은 ${this.이름}이고 나이는 ${this.나이}살이며 사는 곳은 ${this.주소}입니다.`);
+    }
+   }
+   
+   new Introduce('주서현', 24, '경기도 수원시 권선구').소개();
+   /* new Introduce().소개();
+   new Date().getHours(); */
+   let me = new Introduce('주서현', 24, '경기도 수원시 권선구');
+   me.소개();
+   console.log(me.나이);
+</script>

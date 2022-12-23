@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>event Ex1</title>
+    <style>
+        .btn {
+            display: flex;
+        }
+        .btn_style {
+            border: 3px solid #000;
+            margin: 10px;
+            padding: 10px;
+            text-decoration: none;
+            color: inherit;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn">
+        <a href="#" class="btn_style" id="btn1" data-bg="lightpink">lightpink</a>
+        <a href="#" class="btn_style" id="btn2" data-bg="lightgreen">lightgreen</a>
+        <a href="#" class="btn_style" id="btn3" data-bg="lightskyblue">lightskyblue</a>
+        <a href="#" class="btn_style" id="btn4" data-bg="lightblue">lightblue</a>
+    </div>
+<script>
+    const btn1 = document.querySelector('#btn1');
+    const btn2 = document.querySelector('#btn2');
+
+    /* 
+    btn1.addEventListener('click', () => {
+        document.body.style.backgroundColor = 'lightpink';
+    })
+    btn2.addEventListener('click', () => {
+        document.body.style.backgroundColor = 'lightgreen';
+    }) 
+    */
+
+    const btns = document.querySelectorAll('.btn_style');
+    btns.forEach(btn => {
+        const bg = btn.dataset.bg;
+        
+        btn.addEventListener('click', () => {
+            document.body.style.backgroundColor = bg;
+        });
+    });
+</script>
+</body>
+</html>

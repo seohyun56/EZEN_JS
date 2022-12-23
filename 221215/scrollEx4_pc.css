@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+header {
+    height: 150px;
+}
+header.on {
+    height: 120px;
+}
+header .menuBtn {
+    display: none;
+}
+header #gnb {
+    /* opacity: 1; */
+    display: flex;
+    padding-right: 30px;
+    position: absolute;
+    top: 0;
+    background-color: transparent;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+header.on #gnb {
+    top: 0;
+    height: 120px;
+}
+header #gnb a {
+    margin-left: 70px;
+}
+.box {
+    top: 120px;
+}

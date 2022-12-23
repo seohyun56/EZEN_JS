@@ -1,0 +1,33 @@
+<html>
+    <script>
+        // if조건문ex1.html
+
+        // 입력된 점수를 비교하여
+        // 60점 이상은 통과입니다.
+        // 60점 미만은 재평가입니다.
+        // 숫자만 입력해주세요.
+        // 100점 이하로만 입력해주세요.
+
+        let score = prompt('점수를 입력하세요.');
+
+        /*
+        if(score >= 60) {
+            alert(`${score}점은 통과입니다.`); // 입력된 점수는 통과
+        } else if(score < 60) {
+            alert(`${score}점은 재평가입니다.`); // 입력된 점수는 재평가
+        } else {
+            alert(`숫자만 입력해주세요.`);
+        }
+        */
+
+        if(score > 100) {
+            alert(`100점 이하로만 입력해주세요.`);
+        } else if(score >= 60) {
+            alert(`${score}점은 통과입니다.`); 
+        } else if(score < 60) {
+            alert(`${score}점은 재평가입니다.`);
+        } else {
+            alert(`숫자만 입력해주세요.`);
+        }
+    </script>
+</html>

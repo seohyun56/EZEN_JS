@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스좌표 Ex1</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .container {
+            width: 100%;
+            height: 70vh;
+            background-color: lightskyblue;
+            overflow: hidden;
+            position: relative;
+        }
+        .snowman {
+            position: absolute;
+            font-size: 6em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="snowman">⛄</div>
+    </div>
+
+    <script>
+        // 마우스를 누르면(mousedown) 움직이고(mousemove) 마우스를 떼면(mouseup) 멈춤(리스너제거)
+        const snowman = document.querySelector('.snowman');
+
+        const onMove = (e) => {
+            // console.log(e.clientX);
+            // console.log(e.clientY);
+
+            // position
+            // snowman.style.left = `${e.clientX - 60}px`; e.clientX - 60 마우스 커서 중앙으로 
+            // snowman.style.top = `${e.clientY - 55}px`;
+
+            // translate(x, y);
+            snowman.style.transform = `translate(${e.clientX - 60}px, ${e.clientY - 55}px)`; 
+        };
+
+        // 마우스를 누르면
+        addEventListener('mousedown', () => {
+            // 움직이고
+            addEventListener('mousemove', onMove);
+            // 마우스를 떼면
+            addEventListener('mouseup', () => {
+                // 멈춤(리스너 제거)
+                removeEventListener('mousemove', onMove);
+            })
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스좌표 Ex3</title>
+    <style>
+        body {
+            margin: 0;
+            color: #fff;
+        }
+        .container {
+            background-image: linear-gradient(royalblue, cornflowerblue);
+            height: 100vh;
+            overflow: hidden;
+            display: grid;
+            place-content: center;
+            text-align: center;
+            position: relative;
+        }
+        .container h1 {
+            font-size: 12vw;
+            margin: 0;
+            letter-spacing: 1.4vw;
+            font-weight: normal;
+            position: absolute;
+            line-height: 100vh;
+            width: 100%;
+        }
+        .container h2 {
+            font-family: 'Times New Roman', Times, serif;
+            /* font-weight: normal; */
+            color: yellow;
+            margin: 0;
+            position: absolute;
+            line-height: 100vh;
+            width: 100%;
+            font-style: italic;
+            letter-spacing: 4vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>javascript</h1>
+        <h2>It's too much hard</h2>
+    </div>
+    <script>
+        const h1 = document.querySelector('h1');
+        const h2 = document.querySelector('h2');
+
+        const calc = (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+
+            // 스크롤바 미포함. 순수 사용자 화면
+            const clientWidth = document.documentElement.clientWidth;
+            // console.log(x, y, clientWidth);
+
+            const movX = x / clientWidth * 20 - 10;
+            const movY = y / clientWidth * 20 - 10;
+            console.log(movX, movY);
+
+            // 움직임
+            h1.style.transform = `translate(${movX}px, ${movY}px)`;
+            h2.style.transform = `translate(${movX}px, ${movY}px)`;
+            // 블러
+            h1.style.filter = `blur(${movX * movX / 8}px)`;
+            h2.style.filter = `blur(${movY * movY / 8}px)`;
+            // 글자가 멀어지는
+            h1.style.letterSpacing = `${(movX * movY) + (clientWidth / 20)}px`;
+        };
+
+        addEventListener('mousemove', calc);
+    </script>
+</body>
+</html>

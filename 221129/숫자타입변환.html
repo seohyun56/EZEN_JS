@@ -1,0 +1,36 @@
+<script>
+  /* 숫자 타입 변환 */
+
+  // Number() 생성자 함수
+  let obj = "0"; // 0 string
+  obj = Number("0"); // 0 'number'
+  obj = Number("-1"); // -1 'number'
+  obj = Number("-10.225"); // -10.225 'number'
+  obj = Number(true); // 1 'mumber'
+  obj = Number(false); // 0 'mumber'
+  obj = Number(`문자열`); // NaN 'number'
+  console.log(obj, typeof obj);
+
+  // .parseInt() 정수만 반환, .parseFloat() 실수로 반환
+  console.log(parseInt("0"), typeof parseInt("0")); // 0 number
+  console.log(parseInt("-1"), typeof parseInt("-1")); // -1 number
+  console.log(parseInt("10.123"), typeof parseInt("10.123")); // 10 number
+  console.log(parseFloat("10.123"), typeof parseFloat("10.123")); // 10.123 number
+  console.log(parseInt("문자열"), typeof parseInt("문자열")); // NaN number
+  console.log(parseInt(true), typeof parseInt(true)); // NaN number
+
+  // + 더하기 연산자
+  console.log(+"문자열"); // NaN number
+  console.log(+true); // 1 number
+  console.log(+false); // 0 number
+  console.log(+""); // 0 number
+  console.log(+"0"); // 0 number
+  console.log(+"-1"); // -1 number
+
+  // * 1 곱하기 연산자
+  console.log("0" * 1); // 0
+  console.log("-1.2" * 1); // -1.2
+  console.log(true * 1); // 1 * 1 = 1
+  console.log(false * 1); // 0 * 1 = 0
+  console.log("문자열" * 1); // NaN
+</script>

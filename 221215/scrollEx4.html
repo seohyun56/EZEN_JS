@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll Ex4</title>
+    <link rel="stylesheet" href="../common/minireset.min.css">
+    <link rel="stylesheet" href="scrollEx4.css">
+    <link rel="stylesheet" media="(min-width:1240px)" href="./scrollEx4_pc.css">
+</head>
+<body>
+    <!-- 1. header 스크롤 이벤트
+    2. 로고 클릭하면 첫 화면으로
+    3. 메뉴를 클릭하면 해당 박스로
+    4. 모바일버전 메뉴 -->
+    <header>
+        <h1><a href="#">로고</a></h1>
+        <a href="#" class="menuBtn">열기</a>
+        <ul id="gnb">
+            <li><a href="#box1">box1</a></li>
+            <li><a href="#box2">box2</a></li>
+            <li><a href="#box3">box3</a></li>
+            <li><a href="#box4">box4</a></li>
+        </ul>
+    </header>
+    <main>
+        <div class="box box1" id="box1">box1</div>
+        <div class="box box2" id="box2">box2</div>
+        <div class="box box3" id="box3">box3</div>
+        <div class="box box4" id="box4">box4</div>
+    </main>
+
+    <script src="./scrollEx4.js"></script>
+</body>
+</html>

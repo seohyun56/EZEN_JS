@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>js로 비디오 제어</title>
+    <style>
+        .wrapper {
+            display: flex;   
+        }
+        .wrapper article {
+            width: 30vw;
+            height: 30vw;
+            overflow: hidden;
+            margin: 0 5px;
+            /* border: 1px solid #000; */
+        }
+        .wrapper article .video_wrapper {
+            filter: sepia(100%);
+            transition: 0.4s;
+        }
+        .wrapper article .video_wrapper:hover {
+            filter: none;
+            transform: scale(1.1);
+        }
+        .wrapper article video {
+            width: 100%;
+            object-fit: cover;
+        }
+    </style>
+    <script>
+        // body 안에 쓰지 않을 때 DOMContentLoaded 사용
+        document.addEventListener('DOMContentLoaded', () => {
+            const articles = document.querySelectorAll('article');
+            
+            const videoPause = (e) => {
+                const target = e.currentTarget.querySelector('video');
+                target.pause(); // 일시정지
+            };
+
+            articles.forEach(article => {
+                // 각각의 article에 마우스를 올렸을 때
+                article.addEventListener('mouseenter', (e) => {
+                    // 대상.play();
+                    console.log(e.target); // article
+                    e.target.querySelector('video').play(); // article의 video
+                })
+                // 각각의 article에서 마우스가 벗어났을 때
+                article.addEventListener('mouseleave', videoPause)
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <article>
+            <div class="video_wrapper">
+                <video src="./images/vid.mp4" loop muted preload></video>
+            </div>
+        </article>
+        <article>
+            <div class="video_wrapper">
+                <video src="./images/vid.mp4" loop muted preload></video>
+            </div>
+        </article>
+        <article>
+            <div class="video_wrapper">
+                <video src="./images/vid.mp4" loop muted preload></video>
+            </div>
+        </article>
+    </div>
+<!-- <script></script> -->
+</body>
+</html>

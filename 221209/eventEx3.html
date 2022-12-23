@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>event Ex3</title>
+    <style>
+        .top {
+            background-color: lightskyblue;
+            height: 150vw;
+            font-weight: bold;
+            font-size: 2em;
+        }
+        .btn_style {
+            border: 2px solid #000;
+            color: #000;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+            text-align: center;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .btn_style:hover {
+            background-color: #000;
+            color: #fff;
+        }
+        #box {
+            width: 50px; height: 50px;
+            background-color: lightblue;
+            transition: 0.3s;
+        }
+        #box.active {
+            width: 700px;
+            background-color: royalblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">top</div>
+    <a href="#" id="btn" class="btn_style">클릭</a>
+    <div id="box"></div>
+<script>
+    const btn = document.querySelector('#btn');
+    const box = document.querySelector('#box');
+
+    
+    btn.addEventListener('click', (event) => {
+        event.preventDefault();
+        box.classList.toggle('active');
+    });
+</script>
+</body>
+</html>

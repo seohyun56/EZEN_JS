@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열 더하기 대입 연산자</title>
+    <script>
+        /*
+        document.body.innerHTML = '<ul><li>html</li></ul>';
+
+        document.body.innerHTML = '<ul></ul>';
+        document.body.innerHTML = '<li>html5</li>'; // innerHTML은 추가의 개념이 아닌 덮어쓰기
+        */
+
+        /*
+            변수 초기화
+            let txt = ""; 문자열
+            let num = 0; 숫자
+            let boo = false; 논리
+            let obj = null; 객체
+        */
+        // 문서 준비 이벤트
+        window.onload = function() { // 브라우저의 로드가 끝나면 함수 실행
+            let output = ''; // 빈 문자열로 변수 초기화
+            output += '<ul>'; // output('') + '<ul>' -> output('<ul>')
+            output += '<li>html5</li>'; // output('<ul>') + '<li>html5</li>' -> output('<ul><li>html</li>')
+            output += '<li>css3</li>'; 
+            output += '<li>javascript</li>'; 
+            output += '<li>react</li>'; 
+            output += '</ul>';
+
+            document.body.innerHTML = output; // 변수
+        }
+    </script>
+</head>
+<body>
+<!-- 
+    <ul>
+        <li>html5</li>
+        <li>css3</li>
+        <li>javascript</li>
+        <li>react</li>
+    </ul> 
+-->
+</body>
+</html>

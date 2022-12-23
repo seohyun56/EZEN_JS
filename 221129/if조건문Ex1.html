@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>if 조건문 Ex1</title>
+    <script>
+      // 숫자를 입력받아 홀수 짝수를 출력
+      // n은 홀수입니다, n은 짝수입니다
+      let num = prompt("숫자를 입력하세요.");
+      /*
+      if (num % 2 === 0) {
+        alert(`${num}은/는 짝수입니다.`);
+      } else {
+        alert(`${num}은/는 홀수입니다.`);
+      }
+      */
+
+      // 삼항연산자
+      // 조건 ? 참 : 거짓
+      // let obj = (num % 2 === 0) ? alert(`${num}은/는 짝수입니다.`) : alert(`${num}은/는 홀수입니다.`);
+      num % 2 === 0
+        ? alert(`${num}은/는 짝수입니다.`)
+        : alert(`${num}은/는 홀수입니다.`);
+    </script>
+  </head>
+  <body></body>
+</html>

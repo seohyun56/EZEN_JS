@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>checkbox + radio 이벤트 'change'</title>
+</head>
+<body>
+    <input type="checkbox" name="check" id="check1" value="체크박스1">체크박스1
+    <input type="checkbox" name="check" id="check2" value="체크박스2">체크박스2
+    <input type="checkbox" name="check" id="check3" value="체크박스3">체크박스3
+
+    <h3></h3>
+
+<script>
+    const h3 = document.querySelector('h3');
+    const checks = document.querySelectorAll('[type=checkbox]');
+
+    // 'change' : 폼 요소 상태 변경이 끝날 때. input, button, select
+    // .checked; 체크 상태를 boolean으로 반환
+    // checks[0].addEventListener();
+    checks.forEach(check => {
+        check.addEventListener('change', e => {
+            const target = e.target.checked;
+            h3.textContent = `체크박스가 ${target}로 변경되었습니다`;
+        });
+    });
+
+    /* 클릭 이벤트가 발생되나 상태 변화를 감지하지는 못 함
+    checks.forEach(check => {
+        check.addEventListener('click', event => {
+            h3.textContent = `체크박스가 ${}로 변경되었습니다`;
+        });
+    }); 
+    */
+
+</script>
+</body>
+</html>

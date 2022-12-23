@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventEx5</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .container {
+            background-color: lightskyblue;
+            height: 100vh;
+            position: relative;
+        }
+        .container h1 {
+            margin: 0;
+        }
+        .container .menu {
+            background-color: lightgreen;
+            position: absolute;
+            right: 0;
+            height: 100vh;
+            width: 100px;
+            text-align: center;
+            transition: 0.5s;
+        }
+        .container .menu #gnb {
+            margin-top: 100px;
+            list-style: none;
+            padding: 0;
+            display: none;
+        }
+        .container .menu #btn {
+            display: block;
+            text-indent: -9999px;
+            width: 40px; height: 40px;
+            background: url(./images/bars-solid.svg) no-repeat;
+            /* margin-left: 50%; margin-top: 10px; 
+            transform: translateX(-50%); */
+            position: absolute;
+            left: 34%; top: 10px;
+        }
+        /* .container .menu #btn:hover {} */
+        .container .menu.active {
+            width: 300px;
+        }
+        .container .menu #gnb.active {
+            display: block;
+        }
+        .container .menu #btn.active {
+            background: url(./images/xmark-solid.svg) no-repeat;
+            left: 5%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <a href="#" id="btn">메뉴버튼</a>
+            <ul id="gnb">
+                <li>menu1</li>
+                <li>menu2</li>
+                <li>menu3</li>
+                <li>menu4</li>
+            </ul>
+        </div>
+        <h1>main</h1>
+    </div>
+
+    <script>
+        const btn = document.querySelector('#btn');
+        const gnb = document.querySelector('#gnb');
+        const menu = document.querySelector('.menu')
+
+        btn.addEventListener('click', () => {
+            gnb.classList.toggle('active');
+            menu.classList.toggle('active');
+            btn.classList.toggle('active');
+        })
+    </script>
+</body>
+</html>

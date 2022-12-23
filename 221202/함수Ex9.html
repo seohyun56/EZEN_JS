@@ -1,0 +1,14 @@
+<script>
+    // 구구단 출력
+
+    const timeTable = (a, b=9) => {
+        console.log(`--------- ${a}단 ---------`)
+        for (let i = 1; i <= b; i++) {
+            // let sum = a * i;
+            // console.log(`${a} * ${i} = ${sum}`);
+            console.log(`${a} * ${i} = ${a * i}`);
+        }
+    }
+    timeTable(8, 4); // 8단을 4개만 출력
+    timeTable(9); // 9단 전부 출력
+</script>

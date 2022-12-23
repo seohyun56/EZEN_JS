@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>event Ex8</title>
+</head>
+<style>
+    #container {
+        list-style: none;
+        margin: 50px auto;
+        padding-left: 0;
+        border: 3px solid #000;
+        width: 500px; height: 400px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #container .btn {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        font-weight: bold;
+        font-size: 2em;
+        padding: 10px 15px;
+    }
+    /* https://via.placeholder.com/200/f${ran}9/000?text=img${idx+1} */
+
+</style>
+<body>
+    <ul id="container">
+        <li id="prev_btn" class="btn">&lang;</li>
+        <li id="next_btn" class="btn">&rang;</li>
+    </ul>
+<script>
+    const container = document.querySelector('#container');
+    const btns = document.querySelectorAll('.btn');
+
+    const imgs = ['5FD4F5/fff', '5F89F5/fff', '805FF5/fff', 'CB5FF5/fff', 'F55FD4/fff', 'F55F89/fff', '5FF5AC/fff'];
+
+    // 처음 보여지는 이미지
+    container.style.backgroundImage = `url(https://via.placeholder.com/500x400/${imgs[0]}?text=img1)`;
+
+    let i = 0;
+    btns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const target = e.target.id;
+            console.log(target);
+            if (target === 'prev_btn') { // 이전 버튼 클릭 시
+                i--;
+                // i가 0보다 작으면 imgs.length - 1
+                (i < 0) ? i = imgs.length - 1 : false; // 인덱스 번호. 맨 마지막 이미지로 이동
+            } else { // 이후 버튼 클릭 시. else if(traget === 'next_btn')도 가능
+                i++;
+                // i가 imgs.length - 1보다 크거나 같으면 0
+                (i >= imgs.length) ? i = 0 : false; // 인덱스 번호. 맨 처음 이미지로 이동
+            }
+            container.style.backgroundImage = `url(https://via.placeholder.com/500x400/${imgs[i]}?text=img${i+1})`;
+        });
+    });
+</script>
+</body>
+</html>

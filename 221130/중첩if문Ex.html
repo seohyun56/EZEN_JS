@@ -1,0 +1,44 @@
+<script>
+  /* 중첩 if문 Ex
+
+  if (조건) { 이 조건이 참이면
+      실행문;
+      if (조건) {
+          실행문
+      } else {
+          실행문
+      }
+  } else {
+      실행문
+  } */
+
+  const defaultId = "web"; // string
+  const defaultPw = 1234; // number
+
+  let userId = prompt("아이디를 입력하세요"); // string
+  // 아이디를 입력받아 일치하면
+  // 아이디가 일치합니다 출력하고
+  // 비밀번호 입력창을 띄워 비밀번호를 비교하여 일치하면
+  // 로그인 되었습니다
+  // 비밀번호가 일치하지 않습니다 출력
+
+  // 아이디가 일치하지 않으면 아이디가 일치하지 않습니다 출력
+
+  if (userId === defaultId) {
+    alert("아이디가 일치합니다");
+    // 비밀번호 입력
+    let userPw = prompt("비밀번호를 입력하세요"); // string
+    /* 숫자형 변환
+    userPw = + userPw;
+    console.log(typeof userPw);
+    if (userPw === defaultPw) { 
+    */
+    if (userPw == defaultPw) {
+      alert("로그인 되었습니다.");
+    } else {
+      alert("비밀번호가 일치하지 않습니다.");
+    }
+  } else {
+    alert("아이디가 일치하지 않습니다.");
+  }
+</script>
